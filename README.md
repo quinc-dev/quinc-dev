@@ -82,14 +82,17 @@ A structured, flat directory of all 21 production platforms, WebAR applications,
 
 ## Professional Specializations & Certifications
 
-Verified specializations completed through Coursera from leading universities:
+Verified specializations and professional credentials completed through Coursera from leading universities and industry bodies:
 
-- **UX Research & Design Specialization** — University of Michigan
-- **Project Management Principles & Practices** — University of California, Irvine (UC Irvine)
-- **Software Development Lifecycle (SDLC) Specialization** — University of Minnesota
-- **Web Design for Everybody: Basics of Web Development & Coding** — University of Michigan
-- **AI for Everyone** — DeepLearning.AI
-- **Academic Skills for University Success** — The University of Sydney
+| Specialization / Credential | Authority | Verification Link |
+| :--- | :--- | :--- |
+| **Software Development Lifecycle (SDLC)** | University of Minnesota | [`QGR3NQV4SAOI`](https://www.coursera.org/account/accomplishments/specialization/QGR3NQV4SAOI) ↗ |
+| **Certified Ethical Emerging Technologist (CEET)** | CertNexus | [`M8JZTYT0EEP1`](https://www.coursera.org/account/accomplishments/specialization/M8JZTYT0EEP1) ↗ |
+| **UX Research and Design Specialization** | University of Michigan | [`1Q4AFOQPI6TT`](https://www.coursera.org/account/accomplishments/specialization/1Q4AFOQPI6TT) ↗ |
+| **Web Design for Everybody (Basics of Web Dev)** | University of Michigan | [`DLI7VP1FDZK9`](https://www.coursera.org/account/accomplishments/specialization/DLI7VP1FDZK9) ↗ |
+| **Project Management Principles & Practices** | University of California, Irvine (UCI) | [`OCOKK2LUVQ2H`](https://www.coursera.org/account/accomplishments/specialization/OCOKK2LUVQ2H) ↗ |
+
+> 🏛️ **Live Credential Ledger**: Review the complete verified ledger of 6 Specializations & 28+ individual course certifications with credentials at [**qisngx.id.vn/credentials**](https://qisngx.id.vn/credentials).
 
 <div align="center">
   <img src="assets/svgs/divider_architectural.svg" alt="Architectural Hairline Divider" width="100%" />
