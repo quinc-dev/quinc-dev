@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 130" width="100%" height="130" fill="none">
+  <defs>
+    <!-- Monochrome Grid Dot Pattern -->
+    <pattern id="header-dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.75" class="grid-dot" />
+    </pattern>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap');
+
+    /* DARK MODE (Default) */
+    .bg-canvas { fill: transparent; }
+    .grid-dot { fill: #30363d; opacity: 0.6; }
+    .txt-title { font-family: 'Space Grotesk', -apple-system, sans-serif; font-weight: 700; fill: #f0f6fc; letter-spacing: -0.03em; font-size: 32px; }
+    .txt-mono { font-family: 'Space Mono', monospace; fill: #8b949e; font-size: 11px; letter-spacing: 0.08em; }
+    .txt-bold { font-family: 'Space Mono', monospace; fill: #ffffff; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; }
+    .hairline { stroke: #30363d; stroke-width: 1; fill: none; }
+    .bracket-mark { stroke: #ffffff; stroke-width: 1.2; fill: none; }
+    .wave-main { stroke: #ffffff; stroke-width: 1.8; fill: none; stroke-linecap: round; }
+    .wave-sub { stroke: #8b949e; stroke-width: 1; fill: none; opacity: 0.4; stroke-dasharray: 4 4; }
+    .wave-dot { fill: #ffffff; }
+
+    /* LIGHT MODE */
+    @media (prefers-color-scheme: light) {
+      .grid-dot { fill: #d0d7de !important; opacity: 0.8 !important; }
+      .txt-title { fill: #1f2328 !important; }
+      .txt-mono { fill: #656d76 !important; }
+      .txt-bold { fill: #000000 !important; }
+      .hairline { stroke: #d0d7de !important; }
+      .bracket-mark { stroke: #1f2328 !important; }
+      .wave-main { stroke: #1f2328 !important; }
+      .wave-sub { stroke: #656d76 !important; opacity: 0.5 !important; }
+      .wave-dot { fill: #000000 !important; }
+    }
+  </style>
+
+  <!-- Transparent / Seamless Canvas -->
+  <rect width="920" height="130" class="bg-canvas" />
+  <rect width="920" height="130" fill="url(#header-dots)" />
+
+  <!-- Precision Corner Reticle Marks -->
+  <path d="M 12 18 L 12 10 L 20 10" class="bracket-mark" />
+  <path d="M 908 18 L 908 10 L 900 10" class="bracket-mark" />
+  <path d="M 12 112 L 12 120 L 20 120" class="bracket-mark" />
+  <path d="M 908 112 L 908 120 L 900 120" class="bracket-mark" />
+
+  <!-- Top Metadata Bar -->
+  <g transform="translate(28, 24)">
+    <text x="0" y="0" class="txt-bold">FRONTEND ARCHITECTURE // AI-AUGMENTED SYSTEMS</text>
+    <text x="864" y="0" text-anchor="end" class="txt-mono">CAN THO, VN [10.0452° N, 105.7469° E]</text>
+  </g>
+
+  <!-- Main Persona & Title (Flat, No Nested Card) -->
+  <g transform="translate(28, 62)">
+    <text x="0" y="0" class="txt-title">NGUYEN CAO QUI</text>
+    <text x="0" y="24" class="txt-mono">
+      <tspan class="txt-bold">QuiNC</tspan> — CREATIVE UI SPECIALIST &amp; EDGE SYSTEMS // qisngx.id.vn
+    </text>
+  </g>
+
+  <!-- Rossark Organic Fluid Wave (Mekong Flow & Harmonic Frequency) -->
+  <g transform="translate(0, 104)">
+    <!-- Baseline Reference -->
+    <line x1="28" y1="0" x2="892" y2="0" class="hairline" stroke-dasharray="3 5" />
+
+    <!-- Primary Sine Harmonic (Calm, Continuous Wave) -->
+    <path class="wave-main">
+      <animate attributeName="d" dur="7s" repeatCount="indefinite"
+        values="
+          M 28,0 C 180,-10 280,10 440,-5 C 600,-18 700,12 840,-4 C 865,-6 880,0 892,0;
+          M 28,0 C 160,8 260,-12 420,6 C 580,16 680,-10 820,5 C 850,8 880,0 892,0;
+          M 28,0 C 180,-10 280,10 440,-5 C 600,-18 700,12 840,-4 C 865,-6 880,0 892,0
+        "
+        calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+    </path>
+
+    <!-- Secondary Harmonic (Phase-shifted) -->
+    <path class="wave-sub">
+      <animate attributeName="d" dur="7s" repeatCount="indefinite"
+        values="
+          M 28,0 C 200,6 300,-8 460,5 C 620,14 720,-8 850,4 C 870,5 880,0 892,0;
+          M 28,0 C 170,-6 270,8 430,-4 C 590,-14 690,10 830,-5 C 860,-6 880,0 892,0;
+          M 28,0 C 200,6 300,-8 460,5 C 620,14 720,-8 850,4 C 870,5 880,0 892,0
+        "
+        calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+    </path>
+
+    <!-- Gliding Coordinate Node -->
+    <circle r="3" class="wave-dot">
+      <animateMotion dur="7s" repeatCount="indefinite"
+        path="M 28,0 C 180,-10 280,10 440,-5 C 600,-18 700,12 840,-4 C 865,-6 880,0 892,0" />
+    </circle>
+  </g>
+</svg>

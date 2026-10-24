@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 32" width="100%" height="32" fill="none">
+  <defs>
+    <!-- Dark Mode Fading Hairline -->
+    <linearGradient id="div-fade-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="12%" stop-color="#ffffff" stop-opacity="0.35" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="88%" stop-color="#ffffff" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Light Mode Fading Hairline -->
+    <linearGradient id="div-fade-light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1f2328" stop-opacity="0" />
+      <stop offset="12%" stop-color="#1f2328" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#1f2328" stop-opacity="0.9" />
+      <stop offset="88%" stop-color="#1f2328" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#1f2328" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* DARK MODE (Default) */
+    .line-primary {
+      stroke: url(#div-fade-dark);
+      stroke-width: 1.2;
+      fill: none;
+      stroke-linecap: round;
+    }
+    .line-echo {
+      stroke: #8b949e;
+      stroke-width: 0.8;
+      fill: none;
+      opacity: 0.35;
+      stroke-dasharray: 3 4;
+      stroke-linecap: round;
+    }
+    .photon { fill: #ffffff; }
+    .center-node { fill: none; stroke: #ffffff; stroke-width: 1; }
+    .center-core { fill: #ffffff; }
+
+    /* LIGHT MODE */
+    @media (prefers-color-scheme: light) {
+      .line-primary { stroke: url(#div-fade-light) !important; }
+      .line-echo { stroke: #656d76 !important; opacity: 0.45 !important; }
+      .photon { fill: #1f2328 !important; }
+      .center-node { stroke: #1f2328 !important; }
+      .center-core { fill: #1f2328 !important; }
+    }
+
+    @keyframes pulseNode {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.3); opacity: 1; }
+    }
+    .anim-node {
+      transform-origin: 460px 16px;
+      animation: pulseNode 3s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Secondary Phase-shifted Harmonic Wave Echo (Subtle depth) -->
+  <path class="line-echo">
+    <animate attributeName="d" dur="6.5s" repeatCount="indefinite"
+      values="
+        M 100,16 L 370,16 C 400,16 415,22 430,10 C 445,22 460,10 475,22 C 490,10 505,22 520,16 L 820,16;
+        M 100,16 L 370,16 C 400,16 415,10 430,22 C 445,10 460,22 475,10 C 490,22 505,10 520,16 L 820,16;
+        M 100,16 L 370,16 C 400,16 415,22 430,10 C 445,22 460,10 475,22 C 490,10 505,22 520,16 L 820,16
+      "
+      calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+  </path>
+
+  <!-- Primary Acoustic Wavelet Hairline (Rossark Continuous Organic Interpolation) -->
+  <path class="line-primary">
+    <animate attributeName="d" dur="6.5s" repeatCount="indefinite"
+      values="
+        M 24,16 L 360,16 C 395,16 415,8 435,24 C 450,8 460,24 475,8 C 495,24 515,16 560,16 L 896,16;
+        M 24,16 L 360,16 C 395,16 415,24 435,8 C 450,24 460,8 475,24 C 495,8 515,16 560,16 L 896,16;
+        M 24,16 L 360,16 C 395,16 415,8 435,24 C 450,8 460,24 475,8 C 495,24 515,16 560,16 L 896,16
+      "
+      calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+  </path>
+
+  <!-- Center Breathing Acoustic Singularity Node -->
+  <g class="anim-node">
+    <circle cx="460" cy="16" r="3.5" class="center-node" />
+    <circle cx="460" cy="16" r="1.5" class="center-core" />
+  </g>
+
+  <!-- Traveling Starlight Photon (Calm Gliding Motion along Wave) -->
+  <circle r="2" class="photon">
+    <animateMotion dur="6.5s" repeatCount="indefinite"
+      path="M 24,16 L 360,16 C 395,16 415,8 435,24 C 450,8 460,24 475,8 C 495,24 515,16 560,16 L 896,16" />
+    <animate attributeName="opacity" values="0; 0.9; 0.9; 0" dur="6.5s" repeatCount="indefinite" />
+  </circle>
+</svg>

@@ -1,0 +1,5 @@
+scratch/
+render_screenshots.py
+extract_projects.py
+.DS_Store
+Thumbs.db
