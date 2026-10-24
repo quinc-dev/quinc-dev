@@ -1,211 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 200" width="100%" height="200" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 56" width="100%" height="56" fill="none">
   <defs>
-    <!-- Monochrome CAD Blueprint Grid Pattern -->
-    <pattern id="reticle-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 L 0 0 0 24" fill="none" class="grid-line" stroke-width="0.75" />
-      <circle cx="24" cy="24" r="0.75" class="grid-point" />
-    </pattern>
-
-    <!-- Scanning Laser Gradient (Dark Mode) -->
-    <linearGradient id="laser-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Dark Mode Hairline Fade -->
+    <linearGradient id="strip-fade-dark" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.85" />
+      <stop offset="12%" stop-color="#ffffff" stop-opacity="0.35" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="88%" stop-color="#ffffff" stop-opacity="0.35" />
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
 
-    <!-- Scanning Laser Gradient (Light Mode) -->
-    <linearGradient id="laser-light" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Light Mode Hairline Fade -->
+    <linearGradient id="strip-fade-light" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#1f2328" stop-opacity="0" />
-      <stop offset="50%" stop-color="#1f2328" stop-opacity="0.85" />
+      <stop offset="12%" stop-color="#1f2328" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#1f2328" stop-opacity="0.9" />
+      <stop offset="88%" stop-color="#1f2328" stop-opacity="0.3" />
       <stop offset="100%" stop-color="#1f2328" stop-opacity="0" />
     </linearGradient>
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap');
 
     /* DARK MODE (Default) */
-    .hud-border { stroke: #30363d; stroke-width: 1; fill: transparent; }
-    .grid-line { stroke: #21262d; }
-    .grid-point { fill: #30363d; }
-    .hud-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; fill: #f0f6fc; letter-spacing: -0.02em; }
-    .hud-mono { font-family: 'Space Mono', monospace; fill: #8b949e; font-size: 11px; letter-spacing: 0.06em; }
-    .hud-bold { font-family: 'Space Mono', monospace; fill: #ffffff; font-weight: 700; font-size: 11px; letter-spacing: 0.08em; }
-    .hud-dim { font-family: 'Space Mono', monospace; fill: #6e7681; font-size: 8.5px; }
-    .bracket-mark { stroke: #ffffff; stroke-width: 1.4; fill: none; }
-    .hairline-hud { stroke: #30363d; stroke-width: 1; fill: none; }
-    .laser-line { stroke: url(#laser-dark); stroke-width: 1.5; }
-    .reticle-ring { stroke: #8b949e; stroke-width: 1; fill: none; }
-    .reticle-accent { stroke: #ffffff; stroke-width: 1.5; fill: none; }
-    .reticle-dot { fill: #ffffff; }
+    .strip-line { stroke: url(#strip-fade-dark); stroke-width: 0.9; }
+    .strip-tick { stroke: #30363d; stroke-width: 1; }
+    .strip-label { font-family: 'Space Mono', monospace; font-size: 8px; fill: #8b949e; letter-spacing: 0.14em; }
+    .strip-val { font-family: 'Space Mono', monospace; font-size: 10px; fill: #ffffff; font-weight: 700; letter-spacing: 0.05em; }
+    .strip-dot { fill: #ffffff; }
 
     /* LIGHT MODE */
     @media (prefers-color-scheme: light) {
-      .hud-border { stroke: #d0d7de !important; }
-      .grid-line { stroke: #eaeef2 !important; }
-      .grid-point { fill: #d0d7de !important; }
-      .hud-title { fill: #1f2328 !important; }
-      .hud-mono { fill: #656d76 !important; }
-      .hud-bold { fill: #000000 !important; }
-      .hud-dim { fill: #8c959f !important; }
-      .bracket-mark { stroke: #1f2328 !important; }
-      .hairline-hud { stroke: #d0d7de !important; }
-      .laser-line { stroke: url(#laser-light) !important; }
-      .reticle-ring { stroke: #656d76 !important; }
-      .reticle-accent { stroke: #1f2328 !important; }
-      .reticle-dot { fill: #1f2328 !important; }
-    }
-
-    /* Rossark Motion: Smooth Non-Colliding Patrol */
-    @keyframes reticlePatrol {
-      0%, 25% { transform: translate(120px, 62px); }
-      33%, 58% { transform: translate(255px, 62px); }
-      66%, 92% { transform: translate(187px, 142px); }
-      100% { transform: translate(120px, 62px); }
-    }
-
-    @keyframes dialRotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    @keyframes bracketPulse {
-      0%, 25%, 33%, 58%, 66%, 92%, 100% { transform: scale(1); }
-      28%, 61%, 95% { transform: scale(1.18); }
-    }
-
-    .anim-reticle-path {
-      animation: reticlePatrol 12s cubic-bezier(0.77, 0, 0.175, 1) infinite;
-    }
-
-    .anim-dial {
-      transform-origin: 0px 0px;
-      animation: dialRotate 24s linear infinite;
-    }
-
-    .anim-bracket {
-      transform-origin: 0px 0px;
-      animation: bracketPulse 12s ease-in-out infinite;
+      .strip-line { stroke: url(#strip-fade-light) !important; }
+      .strip-tick { stroke: #d0d7de !important; }
+      .strip-label { fill: #656d76 !important; }
+      .strip-val { fill: #1f2328 !important; }
+      .strip-dot { fill: #1f2328 !important; }
     }
   </style>
 
-  <!-- Single Flat Frame (No Nested Boxes) -->
-  <rect x="0.5" y="0.5" width="919" height="199" rx="4" class="hud-border" />
-  <rect x="1" y="1" width="918" height="198" rx="4" fill="url(#reticle-grid)" />
+  <!-- Top Hairline (Fading Edges, Zero Box) -->
+  <line x1="24" y1="4" x2="896" y2="4" class="strip-line" />
 
-  <!-- Precision Corner L-Brackets -->
-  <path d="M 10 20 L 10 10 L 20 10" class="bracket-mark" />
-  <path d="M 910 20 L 910 10 L 900 10" class="bracket-mark" />
-  <path d="M 10 180 L 10 190 L 20 190" class="bracket-mark" />
-  <path d="M 910 180 L 910 190 L 900 190" class="bracket-mark" />
-
-  <!-- LEFT ZONE: Optical Inspection Viewfinder (Coordinates 20 to 360) -->
-  <g>
-    <!-- Hairline Crosshairs -->
-    <line x1="24" y1="100" x2="350" y2="100" class="hairline-hud" stroke-dasharray="3 5" />
-    <line x1="187" y1="20" x2="187" y2="180" class="hairline-hud" stroke-dasharray="3 5" />
-
-    <!-- Static Optical Range Circles -->
-    <circle cx="187" cy="100" r="72" class="hairline-hud" stroke-dasharray="2 4" />
-    <circle cx="187" cy="100" r="42" class="hairline-hud" stroke-dasharray="2 4" />
-
-    <!-- Inspection Node A: Performance Frame-Time (16.6ms) -->
-    <g transform="translate(120, 62)">
-      <circle cx="0" cy="0" r="2.5" class="reticle-ring" />
-      <text x="0" y="-10" text-anchor="middle" class="hud-dim">01 [16.6ms / 60FPS]</text>
-    </g>
-
-    <!-- Inspection Node B: Accessibility Contrast (WCAG AAA) -->
-    <g transform="translate(255, 62)">
-      <circle cx="0" cy="0" r="2.5" class="reticle-ring" />
-      <text x="0" y="-10" text-anchor="middle" class="hud-dim">02 [WCAG AAA]</text>
-    </g>
-
-    <!-- Inspection Node C: Typographic Cadence (1.25) -->
-    <g transform="translate(187, 142)">
-      <circle cx="0" cy="0" r="2.5" class="reticle-ring" />
-      <text x="0" y="16" text-anchor="middle" class="hud-dim">03 [SCALE 1.25]</text>
-    </g>
-
-    <!-- DYNAMIC GLIDING OPTICAL RETICLE -->
-    <g class="anim-reticle-path">
-      <!-- Outer Rotating Dial -->
-      <g class="anim-dial">
-        <circle cx="0" cy="0" r="22" class="reticle-ring" stroke-dasharray="4 6" />
-        <line x1="-25" y1="0" x2="-19" y2="0" class="reticle-accent" />
-        <line x1="19" y1="0" x2="25" y2="0" class="reticle-accent" />
-        <line x1="0" y1="-25" x2="0" y2="-19" class="reticle-accent" />
-        <line x1="0" y1="19" x2="0" y2="25" class="reticle-accent" />
-      </g>
-
-      <!-- Inner Pulsing Crosshair Bracket -->
-      <g class="anim-bracket">
-        <path d="M -10 -6 L -10 -10 L -6 -10" class="bracket-mark" />
-        <path d="M 10 -6 L 10 -10 L 6 -10" class="bracket-mark" />
-        <path d="M -10 6 L -10 10 L -6 10" class="bracket-mark" />
-        <path d="M 10 6 L 10 10 L 6 10" class="bracket-mark" />
-        <!-- Center Target Dot -->
-        <circle cx="0" cy="0" r="1.5" class="reticle-dot" />
-      </g>
-
-      <!-- Live Coordinates Tag -->
-      <g transform="translate(0, 30)">
-        <text x="0" y="0" text-anchor="middle" class="hud-mono" font-size="8px" font-weight="700">INSPECTING</text>
-      </g>
-    </g>
+  <!-- 4 Telemetry Nodes Spaced Across the Line (Open & Breathable) -->
+  <!-- NODE 1: ORIGIN / COORDINATES -->
+  <g transform="translate(32, 22)">
+    <text x="0" y="0" class="strip-label">01 // ORIGIN</text>
+    <text x="0" y="16" class="strip-val">CAN THO, VN [10.04°N]</text>
   </g>
 
-  <!-- VERTICAL DIVIDER SEPARATOR -->
-  <line x1="365" y1="20" x2="365" y2="180" class="hairline-hud" stroke-dasharray="2 4" />
+  <!-- Vertical Divider Tick 1 -->
+  <line x1="245" y1="14" x2="245" y2="42" class="strip-tick" />
 
-  <!-- RIGHT ZONE: Precision Architectural Telemetry (X: 395 to 890) -->
-  <g transform="translate(395, 34)">
-    <!-- Section Title -->
-    <text x="0" y="0" class="hud-title" font-size="14px">ARCHITECTURAL SYSTEM INVARIANTS</text>
-    <text x="495" y="0" text-anchor="end" class="hud-bold" font-size="9.5px">[VERIFIED TELEMETRY]</text>
-
-    <!-- Baseline Hairline -->
-    <line x1="0" y1="12" x2="495" y2="12" class="hairline-hud" />
-
-    <!-- Telemetry Metric Row 1 -->
-    <g transform="translate(0, 32)">
-      <text x="0" y="0" class="hud-bold">01 / RENDER CADENCE</text>
-      <text x="210" y="0" class="hud-mono">≤ 16.6ms / 60 FPS BUDGET</text>
-      <text x="495" y="0" text-anchor="end" class="hud-bold">AAA COMPLIANT</text>
-    </g>
-
-    <!-- Telemetry Metric Row 2 -->
-    <g transform="translate(0, 56)">
-      <text x="0" y="0" class="hud-bold">02 / EDGE RUNTIME</text>
-      <text x="210" y="0" class="hud-mono">CLOUDFLARE WORKERS &amp; KV</text>
-      <text x="495" y="0" text-anchor="end" class="hud-bold">SUB-50ms TTFB</text>
-    </g>
-
-    <!-- Telemetry Metric Row 3 -->
-    <g transform="translate(0, 80)">
-      <text x="0" y="0" class="hud-bold">03 / CODEBASE AUDIT</text>
-      <text x="210" y="0" class="hud-mono">21 PRODUCTION SYSTEMS</text>
-      <text x="495" y="0" text-anchor="end" class="hud-bold">100% COMPILED</text>
-    </g>
-
-    <!-- Telemetry Metric Row 4 -->
-    <g transform="translate(0, 104)">
-      <text x="0" y="0" class="hud-bold">04 / COLOR INVARIANT</text>
-      <text x="210" y="0" class="hud-mono">MONOCHROME DENSITY DUAL-MODE</text>
-      <text x="495" y="0" text-anchor="end" class="hud-bold">RATIO 7.8:1</text>
-    </g>
-
-    <!-- Telemetry Scanning Laser Sweep (Rossark Calm Motion) -->
-    <line x1="0" y1="124" x2="495" y2="124" class="hairline-hud" stroke-dasharray="2 3" />
-    <line x1="0" y1="124" x2="495" y2="124" class="laser-line">
-      <animate attributeName="x1" dur="4.5s" repeatCount="indefinite" values="0; 250; 0" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
-      <animate attributeName="x2" dur="4.5s" repeatCount="indefinite" values="180; 495; 180" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
-    </line>
+  <!-- NODE 2: CRAFT PHILOSOPHY -->
+  <g transform="translate(265, 22)">
+    <text x="0" y="0" class="strip-label">02 // CORE CRAFT</text>
+    <text x="0" y="16" class="strip-val">PRECISION &amp; ARCHITECTURE</text>
   </g>
 
-  <!-- BOTTOM STATUS STRIP -->
-  <g transform="translate(24, 185)">
-    <text x="0" y="0" class="hud-dim">CADENCE: 60FPS SYNCHRONIZED</text>
-    <text x="872" y="0" text-anchor="end" class="hud-dim">OPTICAL RETICLE // SPEC: ISO-9241-300</text>
+  <!-- Vertical Divider Tick 2 -->
+  <line x1="495" y1="14" x2="495" y2="42" class="strip-tick" />
+
+  <!-- NODE 3: PERFORMANCE BUDGET -->
+  <g transform="translate(515, 22)">
+    <text x="0" y="0" class="strip-label">03 // RENDER CADENCE</text>
+    <text x="0" y="16" class="strip-val">16.6ms · 60.0 FPS LOCKED</text>
   </g>
+
+  <!-- Vertical Divider Tick 3 -->
+  <line x1="735" y1="14" x2="735" y2="42" class="strip-tick" />
+
+  <!-- NODE 4: PRODUCTION VOLUME -->
+  <g transform="translate(755, 22)">
+    <text x="0" y="0" class="strip-label">04 // CORPUS</text>
+    <text x="0" y="16" class="strip-val">21 SYSTEMS COMPILED</text>
+  </g>
+
+  <!-- Bottom Hairline with Traveling Light Signal -->
+  <line x1="24" y1="52" x2="896" y2="52" class="strip-line" />
+
+  <!-- Calm Gliding Photon along Bottom Line -->
+  <circle cy="52" r="1.8" class="strip-dot">
+    <animate attributeName="cx" values="32; 888; 32" dur="7.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+    <animate attributeName="opacity" values="0.15; 0.95; 0.15" dur="7.5s" repeatCount="indefinite" />
+  </circle>
 </svg>
