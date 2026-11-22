@@ -8,9 +8,9 @@
   <img src="assets/svgs/divider_architectural.svg" alt="Architectural Hairline Divider" width="100%" />
 </div>
 
-# NGUYEN CAO QUI (QuiNC) — Creative Frontend Architect & Interaction Systems Engineer
+# Nguyễn Cao Quí (QuiNC) — Creative Frontend Architect & Interaction Systems Engineer
 
-I am a **Creative Frontend Architect** and **AI-Augmented Software Engineer** based in Can Tho, Vietnam [10.0452° N, 105.7469° E]. My technical discipline centers on building high-performance web applications, GPU-accelerated graphics pipelines, and edge-native architectures.
+I am **Nguyễn Cao Quí (QuiNC)**, a **Creative Frontend Architect** and **AI-Augmented Software Engineer** based in Can Tho, Vietnam [10.0452° N, 105.7469° E]. My technical discipline centers on building high-performance web applications, GPU-accelerated graphics pipelines, and edge-native architectures. Official architecture hub: **[qisngx.id.vn](https://qisngx.id.vn)**.
 
 - **Core Philosophy**: Precision & Architecture — meticulous craftsmanship from underlying data structures and AST call graphs to sub-pixel rendering.
 - **Engineering Paradigm**: AI-Augmented Software Engineering (Vibe Coding) — shifting development leverage from manual line-by-line syntax writing to architectural synthesis, algorithmic validation, and continuous quality governance.
@@ -102,11 +102,13 @@ Verified specializations and professional credentials completed through Coursera
 
 - **Official Architecture Hub**: [qisngx.id.vn](https://qisngx.id.vn)
 - **GitHub**: [github.com/quinc-dev](https://github.com/quinc-dev)
-- **LinkedIn**: [linkedin.com/in/nguyen-cao-qui](https://linkedin.com/in/nguyen-cao-qui)
+- **LinkedIn**: [linkedin.com/in/nguyen-cao-qui](https://www.linkedin.com/in/nguyen-cao-qui/)
+- **TikTok**: [@qisngx13](https://www.tiktok.com/@qisngx13)
+- **Facebook**: [facebook.com/imcqsngx](https://www.facebook.com/imcqsngx/)
 - **GitLab**: [gitlab.com/quinc.ce190986](https://gitlab.com/quinc.ce190986)
-- **Direct Communication**: [quinc.ce190986@gmail.com](mailto:nguyencaoqui05@gmail.com)
+- **Direct Communication**: [nguyencaoqui05@gmail.com](mailto:nguyencaoqui05@gmail.com)
 
 <div align="center">
   <br />
-  <sub>Crafted with Precision Engineering // Zero AI-Slop // Can Tho, Vietnam</sub>
+  <sub>Built by <a href="https://qisngx.id.vn">Nguyễn Cao Quí (QuiNC)</a> · Precision Engineering · Can Tho, Vietnam</sub>
 </div>
