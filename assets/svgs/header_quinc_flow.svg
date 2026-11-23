@@ -1,95 +1,88 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 130" width="100%" height="130" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 128" width="100%" height="128" fill="none">
   <defs>
-    <!-- Monochrome Grid Dot Pattern -->
-    <pattern id="header-dots" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="0.75" class="grid-dot" />
-    </pattern>
+    <!-- Dark Mode Wave Fade (Swiss Amber #FFB86C) -->
+    <linearGradient id="wave-fade-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08" />
+      <stop offset="25%" stop-color="#ffffff" stop-opacity="0.75" />
+      <stop offset="70%" stop-color="#FFB86C" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.08" />
+    </linearGradient>
+
+    <!-- Light Mode Wave Fade (Swiss Amber #B45309) -->
+    <linearGradient id="wave-fade-light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0.08" />
+      <stop offset="25%" stop-color="#0f172a" stop-opacity="0.7" />
+      <stop offset="70%" stop-color="#B45309" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.08" />
+    </linearGradient>
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap');
+    /* GitHub Theme Adaptive Styling */
+    /* DARK MODE (Default) - Swiss Amber #FFB86C */
+    .hdr-tag { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; font-weight: 700; fill: #f8fafc; letter-spacing: 0.14em; }
+    .hdr-coord { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10px; fill: #94a3b8; letter-spacing: 0.08em; }
+    .hdr-name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 34px; font-weight: 800; fill: #ffffff; letter-spacing: -0.03em; }
+    .hdr-sub { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11.5px; fill: #94a3b8; letter-spacing: 0.04em; }
+    .hdr-brand { fill: #FFB86C; font-weight: 700; }
+    .hdr-dash { fill: #64748b; }
+    .hdr-link { fill: #e2e8f0; font-weight: 600; }
+    .wave-base { stroke: rgba(255,255,255,0.12); stroke-width: 1; stroke-dasharray: 4 4; fill: none; }
+    .wave-line { stroke: url(#wave-fade-dark); stroke-width: 1.8; fill: none; stroke-linecap: round; }
+    .wave-dot { fill: #FFB86C; filter: drop-shadow(0 0 5px rgba(255, 184, 108, 0.75)); }
 
-    /* DARK MODE (Default) */
-    .bg-canvas { fill: transparent; }
-    .grid-dot { fill: #30363d; opacity: 0.6; }
-    .txt-title { font-family: 'Space Grotesk', -apple-system, sans-serif; font-weight: 700; fill: #f0f6fc; letter-spacing: -0.03em; font-size: 32px; }
-    .txt-mono { font-family: 'Space Mono', monospace; fill: #8b949e; font-size: 11px; letter-spacing: 0.08em; }
-    .txt-bold { font-family: 'Space Mono', monospace; fill: #ffffff; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; }
-    .hairline { stroke: #30363d; stroke-width: 1; fill: none; }
-    .bracket-mark { stroke: #ffffff; stroke-width: 1.2; fill: none; }
-    .wave-main { stroke: #ffffff; stroke-width: 1.8; fill: none; stroke-linecap: round; }
-    .wave-sub { stroke: #8b949e; stroke-width: 1; fill: none; opacity: 0.4; stroke-dasharray: 4 4; }
-    .wave-dot { fill: #ffffff; }
-
-    /* LIGHT MODE */
+    /* LIGHT MODE - Swiss Amber #B45309 */
     @media (prefers-color-scheme: light) {
-      .grid-dot { fill: #d0d7de !important; opacity: 0.8 !important; }
-      .txt-title { fill: #1f2328 !important; }
-      .txt-mono { fill: #656d76 !important; }
-      .txt-bold { fill: #000000 !important; }
-      .hairline { stroke: #d0d7de !important; }
-      .bracket-mark { stroke: #1f2328 !important; }
-      .wave-main { stroke: #1f2328 !important; }
-      .wave-sub { stroke: #656d76 !important; opacity: 0.5 !important; }
-      .wave-dot { fill: #000000 !important; }
+      .hdr-tag { fill: #0f172a !important; }
+      .hdr-coord { fill: #64748b !important; }
+      .hdr-name { fill: #09090b !important; }
+      .hdr-sub { fill: #475569 !important; }
+      .hdr-brand { fill: #B45309 !important; }
+      .hdr-dash { fill: #94a3b8 !important; }
+      .hdr-link { fill: #1e293b !important; }
+      .wave-base { stroke: rgba(0,0,0,0.1) !important; }
+      .wave-line { stroke: url(#wave-fade-light) !important; }
+      .wave-dot { fill: #B45309 !important; filter: drop-shadow(0 0 4px rgba(180, 83, 9, 0.5)) !important; }
     }
   </style>
 
-  <!-- Transparent / Seamless Canvas -->
-  <rect width="920" height="130" class="bg-canvas" />
-  <rect width="920" height="130" fill="url(#header-dots)" />
-
-  <!-- Precision Corner Reticle Marks -->
-  <path d="M 12 18 L 12 10 L 20 10" class="bracket-mark" />
-  <path d="M 908 18 L 908 10 L 900 10" class="bracket-mark" />
-  <path d="M 12 112 L 12 120 L 20 120" class="bracket-mark" />
-  <path d="M 908 112 L 908 120 L 900 120" class="bracket-mark" />
-
   <!-- Top Metadata Bar -->
-  <g transform="translate(28, 24)">
-    <text x="0" y="0" class="txt-bold">FRONTEND ARCHITECTURE // AI-AUGMENTED SYSTEMS</text>
-    <text x="864" y="0" text-anchor="end" class="txt-mono">CAN THO, VN [10.0452° N, 105.7469° E]</text>
+  <g transform="translate(20, 20)">
+    <text x="0" y="0" class="hdr-tag">FRONTEND ARCHITECTURE · AI-AUGMENTED SYSTEMS</text>
+    <text x="880" y="0" text-anchor="end" class="hdr-coord">CAN THO, VN [10.0452° N, 105.7469° E]</text>
   </g>
 
-  <!-- Main Persona & Title (Flat, No Nested Card) -->
-  <g transform="translate(28, 62)">
-    <text x="0" y="0" class="txt-title">NGUYEN CAO QUI</text>
-    <text x="0" y="24" class="txt-mono">
-      <tspan class="txt-bold">QuiNC</tspan> — CREATIVE UI SPECIALIST &amp; EDGE SYSTEMS // qisngx.id.vn
+  <!-- Primary Headline -->
+  <g transform="translate(20, 64)">
+    <text x="0" y="0" class="hdr-name">NGUYỄN CAO QUÍ</text>
+    <text x="0" y="24" class="hdr-sub">
+      <tspan class="hdr-brand">QuiNC</tspan>
+      <tspan class="hdr-dash"> — </tspan>Creative Frontend Architect &amp; Systems Engineer
+      <tspan class="hdr-dash"> · </tspan>
+      <tspan class="hdr-link">qisngx.id.vn</tspan>
     </text>
   </g>
 
-  <!-- Rossark Organic Fluid Wave (Mekong Flow & Harmonic Frequency) -->
-  <g transform="translate(0, 104)">
-    <!-- Baseline Reference -->
-    <line x1="28" y1="0" x2="892" y2="0" class="hairline" stroke-dasharray="3 5" />
+  <!-- Rossark Organic Fluid Wave (Mekong Harmonic Flow) -->
+  <g transform="translate(0, 108)">
+    <!-- Baseline Reference Hairline -->
+    <line x1="20" y1="0" x2="900" y2="0" class="wave-base" />
 
-    <!-- Primary Sine Harmonic (Calm, Continuous Wave) -->
-    <path class="wave-main">
+    <!-- Animated Smooth Harmonic Wave -->
+    <path class="wave-line">
       <animate attributeName="d" dur="7s" repeatCount="indefinite"
         values="
-          M 28,0 C 180,-10 280,10 440,-5 C 600,-18 700,12 840,-4 C 865,-6 880,0 892,0;
-          M 28,0 C 160,8 260,-12 420,6 C 580,16 680,-10 820,5 C 850,8 880,0 892,0;
-          M 28,0 C 180,-10 280,10 440,-5 C 600,-18 700,12 840,-4 C 865,-6 880,0 892,0
+          M 20,0 C 180,-10 280,10 440,-6 C 600,-16 700,12 840,-4 C 865,-6 880,0 900,0;
+          M 20,0 C 160,8 260,-12 420,6 C 580,15 680,-10 820,5 C 850,7 880,0 900,0;
+          M 20,0 C 180,-10 280,10 440,-6 C 600,-16 700,12 840,-4 C 865,-6 880,0 900,0
         "
         calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
     </path>
 
-    <!-- Secondary Harmonic (Phase-shifted) -->
-    <path class="wave-sub">
-      <animate attributeName="d" dur="7s" repeatCount="indefinite"
-        values="
-          M 28,0 C 200,6 300,-8 460,5 C 620,14 720,-8 850,4 C 870,5 880,0 892,0;
-          M 28,0 C 170,-6 270,8 430,-4 C 590,-14 690,10 830,-5 C 860,-6 880,0 892,0;
-          M 28,0 C 200,6 300,-8 460,5 C 620,14 720,-8 850,4 C 870,5 880,0 892,0
-        "
-        calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
-    </path>
-
-    <!-- Gliding Coordinate Node -->
+    <!-- Calm Gliding Coordinate Photon -->
     <circle r="3" class="wave-dot">
       <animateMotion dur="7s" repeatCount="indefinite"
-        path="M 28,0 C 180,-10 280,10 440,-5 C 600,-18 700,12 840,-4 C 865,-6 880,0 892,0" />
+        path="M 20,0 C 180,-10 280,10 440,-6 C 600,-16 700,12 840,-4 C 865,-6 880,0 900,0" />
     </circle>
   </g>
 </svg>

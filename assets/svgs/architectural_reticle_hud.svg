@@ -1,87 +1,87 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 56" width="100%" height="56" fill="none">
   <defs>
-    <!-- Dark Mode Hairline Fade -->
+    <!-- Dark Mode Hairline Fade (Swiss Amber #FFB86C) -->
     <linearGradient id="strip-fade-dark" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
-      <stop offset="12%" stop-color="#ffffff" stop-opacity="0.35" />
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.95" />
-      <stop offset="88%" stop-color="#ffffff" stop-opacity="0.35" />
+      <stop offset="15%" stop-color="#ffffff" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#FFB86C" stop-opacity="0.9" />
+      <stop offset="85%" stop-color="#ffffff" stop-opacity="0.25" />
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
 
-    <!-- Light Mode Hairline Fade -->
+    <!-- Light Mode Hairline Fade (Swiss Amber #B45309) -->
     <linearGradient id="strip-fade-light" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#1f2328" stop-opacity="0" />
-      <stop offset="12%" stop-color="#1f2328" stop-opacity="0.3" />
-      <stop offset="50%" stop-color="#1f2328" stop-opacity="0.9" />
-      <stop offset="88%" stop-color="#1f2328" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#1f2328" stop-opacity="0" />
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0" />
+      <stop offset="15%" stop-color="#0f172a" stop-opacity="0.2" />
+      <stop offset="50%" stop-color="#B45309" stop-opacity="0.85" />
+      <stop offset="85%" stop-color="#0f172a" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0" />
     </linearGradient>
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap');
-
-    /* DARK MODE (Default) */
+    /* DARK MODE (Default) - Swiss Amber #FFB86C */
     .strip-line { stroke: url(#strip-fade-dark); stroke-width: 0.9; }
-    .strip-tick { stroke: #30363d; stroke-width: 1; }
-    .strip-label { font-family: 'Space Mono', monospace; font-size: 8px; fill: #8b949e; letter-spacing: 0.14em; }
-    .strip-val { font-family: 'Space Mono', monospace; font-size: 10px; fill: #ffffff; font-weight: 700; letter-spacing: 0.05em; }
-    .strip-dot { fill: #ffffff; }
+    .strip-tick { stroke: rgba(255,255,255,0.15); stroke-width: 1; }
+    .strip-label { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 8.5px; font-weight: 600; fill: #94a3b8; letter-spacing: 0.16em; }
+    .strip-val { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10.5px; fill: #ffffff; font-weight: 700; letter-spacing: 0.05em; }
+    .strip-val-accent { fill: #FFB86C; }
+    .strip-dot { fill: #FFB86C; filter: drop-shadow(0 0 3px rgba(255, 184, 108, 0.7)); }
 
-    /* LIGHT MODE */
+    /* LIGHT MODE - Swiss Amber #B45309 */
     @media (prefers-color-scheme: light) {
       .strip-line { stroke: url(#strip-fade-light) !important; }
-      .strip-tick { stroke: #d0d7de !important; }
-      .strip-label { fill: #656d76 !important; }
-      .strip-val { fill: #1f2328 !important; }
-      .strip-dot { fill: #1f2328 !important; }
+      .strip-tick { stroke: rgba(0,0,0,0.12) !important; }
+      .strip-label { fill: #64748b !important; }
+      .strip-val { fill: #0f172a !important; }
+      .strip-val-accent { fill: #B45309 !important; }
+      .strip-dot { fill: #B45309 !important; filter: drop-shadow(0 0 2px rgba(180, 83, 9, 0.45)) !important; }
     }
   </style>
 
-  <!-- Top Hairline (Fading Edges, Zero Box) -->
-  <line x1="24" y1="4" x2="896" y2="4" class="strip-line" />
+  <!-- Top Hairline -->
+  <line x1="20" y1="4" x2="900" y2="4" class="strip-line" />
 
-  <!-- 4 Telemetry Nodes Spaced Across the Line (Open & Breathable) -->
-  <!-- NODE 1: ORIGIN / COORDINATES -->
-  <g transform="translate(32, 22)">
-    <text x="0" y="0" class="strip-label">01 // ORIGIN</text>
-    <text x="0" y="16" class="strip-val">CAN THO, VN [10.04°N]</text>
+  <!-- 4 Telemetry Nodes Spaced Across the Ribbon -->
+  <!-- NODE 1: ORIGIN -->
+  <g transform="translate(28, 22)">
+    <text x="0" y="0" class="strip-label">01. ORIGIN</text>
+    <text x="0" y="16" class="strip-val">CAN THO, VN [10.04° N]</text>
   </g>
 
   <!-- Vertical Divider Tick 1 -->
-  <line x1="245" y1="14" x2="245" y2="42" class="strip-tick" />
+  <line x1="240" y1="14" x2="240" y2="42" class="strip-tick" />
 
   <!-- NODE 2: CRAFT PHILOSOPHY -->
-  <g transform="translate(265, 22)">
-    <text x="0" y="0" class="strip-label">02 // CORE CRAFT</text>
+  <g transform="translate(262, 22)">
+    <text x="0" y="0" class="strip-label">02. CORE CRAFT</text>
     <text x="0" y="16" class="strip-val">PRECISION &amp; ARCHITECTURE</text>
   </g>
 
   <!-- Vertical Divider Tick 2 -->
-  <line x1="495" y1="14" x2="495" y2="42" class="strip-tick" />
+  <line x1="490" y1="14" x2="490" y2="42" class="strip-tick" />
 
   <!-- NODE 3: PERFORMANCE BUDGET -->
-  <g transform="translate(515, 22)">
-    <text x="0" y="0" class="strip-label">03 // RENDER CADENCE</text>
+  <g transform="translate(512, 22)">
+    <text x="0" y="0" class="strip-label">03. CADENCE</text>
     <text x="0" y="16" class="strip-val">16.6ms · 60.0 FPS LOCKED</text>
   </g>
 
   <!-- Vertical Divider Tick 3 -->
-  <line x1="735" y1="14" x2="735" y2="42" class="strip-tick" />
+  <line x1="730" y1="14" x2="730" y2="42" class="strip-tick" />
 
   <!-- NODE 4: PRODUCTION VOLUME -->
-  <g transform="translate(755, 22)">
-    <text x="0" y="0" class="strip-label">04 // CORPUS</text>
-    <text x="0" y="16" class="strip-val">20 SYSTEMS COMPILED</text>
+  <g transform="translate(752, 22)">
+    <text x="0" y="0" class="strip-label">04. CORPUS</text>
+    <text x="0" y="16" class="strip-val"><tspan class="strip-val-accent">20</tspan> SYSTEMS COMPILED</text>
   </g>
 
   <!-- Bottom Hairline with Traveling Light Signal -->
-  <line x1="24" y1="52" x2="896" y2="52" class="strip-line" />
+  <line x1="20" y1="52" x2="900" y2="52" class="strip-line" />
 
   <!-- Calm Gliding Photon along Bottom Line -->
   <circle cy="52" r="1.8" class="strip-dot">
-    <animate attributeName="cx" values="32; 888; 32" dur="7.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
-    <animate attributeName="opacity" values="0.15; 0.95; 0.15" dur="7.5s" repeatCount="indefinite" />
+    <animate attributeName="cx" values="24; 896; 24" dur="7.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+    <animate attributeName="opacity" values="0.2; 0.95; 0.2" dur="7.5s" repeatCount="indefinite" />
   </circle>
 </svg>
