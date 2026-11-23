@@ -24,6 +24,14 @@ I am **Nguyễn Cao Quí (QuiNC)**, a **Creative Frontend Architect** and **AI-A
   <img src="assets/svgs/divider_architectural.svg" alt="Architectural Hairline Divider" width="100%" />
 </div>
 
+<div align="center">
+  <img src="assets/svgs/personal_atelier.svg" alt="QuiNC Personal Hardware Rig & Interaction Atelier (2.5D Isometric Diorama)" width="85%" />
+</div>
+
+<div align="center">
+  <img src="assets/svgs/divider_architectural.svg" alt="Architectural Hairline Divider" width="100%" />
+</div>
+
 ## Systems Architecture & Technical Capabilities
 
 | Domain                         | Core Technologies & Architectural Invariants                                    |
@@ -39,13 +47,13 @@ I am **Nguyễn Cao Quí (QuiNC)**, a **Creative Frontend Architect** and **AI-A
   <img src="assets/svgs/divider_architectural.svg" alt="Architectural Hairline Divider" width="100%" />
 </div>
 
-## Complete Systems Archive (21 Compiled Projects)
+## Complete Systems Archive (20 Compiled Projects)
 
-A structured, flat directory of all 21 production platforms, WebAR applications, interactive simulations, and systems utilities.
+A structured, flat directory of all 20 production platforms, WebAR applications, interactive simulations, and systems utilities.
 
 ### 01 / Enterprise & Commercial Platforms
 
-| Project & Award       | Role & Scope                  | Core Technology                            | Live Production                                            | Architectural Highlight                                                        |
+| Project & Scope       | Role & Scope                  | Core Technology                            | Live Production                                            | Architectural Highlight                                                        |
 | :-------------------- | :---------------------------- | :----------------------------------------- | :--------------------------------------------------------- | :----------------------------------------------------------------------------- |
 | **Song Hau Biotech**  | Solo Outsource                | Next.js 16, React 19, OpenNext, Cloudflare | [songhau.vn ↗](https://songhau.vn)                         | Enterprise agricultural biotech portal; sub-25ms TTFB on global Edge KV.       |
 | **Terra Mark**        | Frontend (ResFes 2026 Prize)  | MindAR, Next.js 16, React 19, Tailwind     | [terramark.io.vn ↗](https://terramark.io.vn)               | Mobile WebAR dual-target camera tracking for real-time plastic classification. |
@@ -61,6 +69,7 @@ A structured, flat directory of all 21 production platforms, WebAR applications,
 | **Sonolux**            | Audio-Visual   | WebGL 2.0, GLSL, Web Audio API (FFT)    | [sonolux.pages.dev ↗](https://sonolux.pages.dev)                    | 50,000+ particles GPU simulation; 60.0 FPS locked; zero-alloc audio uniform stream. |
 | **Word Forge**         | EdTech Game    | React 19, Framer Motion, Web Speech API | [word-forge.pages.dev ↗](https://word-forge.pages.dev)              | Timber Woodcraft Golem character motion rig; procedural oscillator synthesis.       |
 | **Meme Onet**          | Arcade Game    | Vue 3, HTML5 Canvas, Web Audio API      | [meme-onet.pages.dev ↗](https://meme-onet.pages.dev)                | Tactile connect-2 tile matrix engine with zero-latency audio dispatching.           |
+| **Meme Flip**          | 3D Arcade      | React 19, Vite 6, Web Streams, Audio    | [meme-flip.pages.dev ↗](https://meme-flip.pages.dev)                | Neo-Brutalism 3D pop memory game; zero-server deck sharing via `deflate-raw` streams.|
 | **Mekong Connect**     | Cloud Platform | Cloudflare Workers, Edge KV, REST API   | [workers.dev ↗](https://mekongconnect.quinc-ce190986.workers.dev/)  | Regional event telemetry & live data distribution running at network edge.          |
 | **Bloom Sanctuary**    | 3D Interactive | Three.js / Canvas, CSS 3D Transforms    | [khu-vuon-20-10.pages.dev ↗](https://khu-vuon-20-10.pages.dev)      | Procedural flower petal geometry and harmonic blooming animation curves.            |
 | **Neon Chance**        | Interactive    | HTML5 Canvas, Web Audio, Vite           | [github.io ↗](https://quinc-dev.github.io/entropy-nexus/)           | Physics-driven entropy & probability simulation chamber.                            |
@@ -69,12 +78,13 @@ A structured, flat directory of all 21 production platforms, WebAR applications,
 
 ### 03 / AI Engineering & Windows System Utilities
 
-| Project                | Domain          | Core Technology                       | Repository / Deployment                                                                                          | Architectural Highlight                                                    |
-| :--------------------- | :-------------- | :------------------------------------ | :--------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------- |
-| **Lucid — Keep-Awake** | Windows Utility | Python 3.12, Win32 API, CustomTkinter | [Docs ↗](https://quinc-dev.github.io/lucid-keepawake/) \| [Repo ↗](https://github.com/quinc-dev/lucid-keepawake) | Win32 `SetThreadExecutionState` kernel lock, zero mouse cursor jitter.     |
-| **Wifi Rescue**        | System Security | Python, Windows API, netsh engine     | [Docs ↗](https://quinc-dev.github.io/WifiRescue/) \| [Repo ↗](https://github.com/quinc-dev/WifiRescue)           | 1-Click WPA2/WPA3 Enterprise 802.1X profile backup & disaster recovery.    |
-| **Mini GraphRAG**      | AI Architecture | Python, NetworkX, LightRAG API        | [quinc-dev/mini-graphrag ↗](https://quinc-dev.github.io/mini-graphrag/)                                          | Compact graph-based knowledge retrieval engine for local LLM pipelines.    |
-| **FUO Quiz Toolchain** | EdTech Pipeline | Python, PyPDF, Regex Pipeline         | [quinc-dev/fuo-quiz-toolchain ↗](https://quinc-dev.github.io/fuo-quiz-toolchain/)                                | Automated examination document parsing and gift-format question generator. |
+| Project                    | Domain          | Core Technology                       | Repository / Deployment                                                                                          | Architectural Highlight                                                    |
+| :------------------------- | :-------------- | :------------------------------------ | :--------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------- |
+| **QuiNC Legion Controller**| Hardware Driver | Python 3.12, Win32 C-API (ctypes), HID| [quinc-legion-studio ↗](https://quinc-legion-studio.pages.dev/)                                                  | Zero-dependency Windows HID controller for Lenovo TrueStrike (ITE 8295); RAM <35MB. |
+| **Lucid — Keep-Awake**     | Windows Utility | Python 3.12, Win32 API, CustomTkinter | [Docs ↗](https://quinc-dev.github.io/lucid-keepawake/) \| [Repo ↗](https://github.com/quinc-dev/lucid-keepawake) | Win32 `SetThreadExecutionState` kernel lock, zero mouse cursor jitter.     |
+| **Wifi Rescue**            | System Security | Python, Windows API, netsh engine     | [Docs ↗](https://quinc-dev.github.io/WifiRescue/) \| [Repo ↗](https://github.com/quinc-dev/WifiRescue)           | 1-Click WPA2/WPA3 Enterprise 802.1X profile backup & disaster recovery.    |
+| **Mini GraphRAG**          | AI Architecture | Python, NetworkX, LightRAG API        | [quinc-dev/mini-graphrag ↗](https://quinc-dev.github.io/mini-graphrag/)                                          | Compact graph-based knowledge retrieval engine for local LLM pipelines.    |
+| **FUO Quiz Toolchain**     | EdTech Pipeline | Python, PyPDF, Regex Pipeline         | [quinc-dev/fuo-quiz-toolchain ↗](https://quinc-dev.github.io/fuo-quiz-toolchain/)                                | Automated examination document parsing and gift-format question generator. |
 
 <div align="center">
   <img src="assets/svgs/divider_architectural.svg" alt="Architectural Hairline Divider" width="100%" />
@@ -110,5 +120,5 @@ Verified specializations and professional credentials completed through Coursera
 
 <div align="center">
   <br />
-  <sub>Built by <a href="https://qisngx.id.vn">Nguyễn Cao Quí (QuiNC)</a> · Precision Engineering · Can Tho, Vietnam</sub>
+  <sub>Built by <a href="https://qisngx.id.vn">Nguyễn Cao Quí (QuiNC)</a> · Precision Engineering · Zero AI-Slop · Can Tho, Vietnam</sub>
 </div>

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 480" width="100%" fill="none">
+  <defs>
+    <!-- Soft Contact Shadows -->
+    <filter id="soft-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0"/>
+      <feOffset dx="0" dy="12"/>
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+    </filter>
+
+    <filter id="contact-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.7 0"/>
+      <feOffset dx="0" dy="3"/>
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+    </filter>
+
+    <!-- Legion RGB Underglow Gradient for M500 -->
+    <linearGradient id="legion-rgb-strip" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="45%" stop-color="#3b82f6" />
+      <stop offset="75%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+
+    <!-- Mouse Shell Metallic Gradient -->
+    <linearGradient id="mouse-shell-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d303a" />
+      <stop offset="50%" stop-color="#1f2127" />
+      <stop offset="100%" stop-color="#14151a" />
+    </linearGradient>
+
+    <!-- Keyboard Chassis Gradient -->
+    <linearGradient id="k7-chassis-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#32343e" />
+      <stop offset="100%" stop-color="#1e2026" />
+    </linearGradient>
+
+    <!-- Screen Glow Gradient -->
+    <linearGradient id="screen-glow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0e14" />
+      <stop offset="100%" stop-color="#121622" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* GitHub Theme Adaptive Styling */
+    /* DARK MODE (Default) */
+    .desk-top { fill: #1c1d24; stroke: rgba(255,255,255,0.16); }
+    .desk-left { fill: #101115; stroke: rgba(255,255,255,0.12); }
+    .desk-right { fill: #14151c; stroke: rgba(255,255,255,0.12); }
+    .desk-bevel { stroke: rgba(255,255,255,0.22); }
+    .mat-top { fill: #22242e; stroke: rgba(255,255,255,0.08); }
+    .mat-bevel { fill: #181920; }
+    .mat-stitch { stroke: rgba(255,255,255,0.15); }
+    .ambient-ellipse { fill: #000000; opacity: 0.75; }
+
+    /* LIGHT MODE */
+    @media (prefers-color-scheme: light) {
+      .desk-top { fill: #dfdeda !important; stroke: rgba(0,0,0,0.12) !important; }
+      .desk-left { fill: #b8b7b2 !important; stroke: rgba(0,0,0,0.08) !important; }
+      .desk-right { fill: #c7c6c0 !important; stroke: rgba(0,0,0,0.08) !important; }
+      .desk-bevel { stroke: rgba(255,255,255,0.6) !important; }
+      .mat-top { fill: #eae9e4 !important; stroke: rgba(0,0,0,0.06) !important; }
+      .mat-bevel { fill: #cbc9c2 !important; }
+      .mat-stitch { stroke: rgba(0,0,0,0.18) !important; }
+      .ambient-ellipse { fill: #000000 !important; opacity: 0.10 !important; }
+    }
+  </style>
+
+  <!-- Ambient Contact Shadow -->
+  <ellipse cx="340" cy="305" rx="315" ry="125" class="ambient-ellipse" filter="blur(28px)" />
+
+  <!-- DESK STRUCTURE -->
+  <g id="desk-furniture">
+    <!-- Desk Front Left Edge (along V) -->
+    <polygon points="314,60 28.2,225 28.2,243 314,78" class="desk-left" stroke-width="1" />
+
+    <!-- Desk Front Right Edge (along U) -->
+    <polygon points="28.2,225 366,420 366,438 28.2,243" class="desk-right" stroke-width="1" />
+
+    <!-- Desk Top Surface -->
+    <polygon points="314,60 651.8,255 366,420 28.2,225" class="desk-top" stroke-width="1" />
+
+    <!-- Desk Bevel Highlight -->
+    <polyline points="314,60 28.2,225 366,420" fill="none" class="desk-bevel" stroke-width="1.2" />
+
+    <!-- DESK MAT -->
+    <polygon points="314,88 599.8,253 361.7,390.5 75.9,225.5" class="mat-top" stroke-width="1" />
+
+    <!-- Desk Mat Front Bevel -->
+    <polygon points="75.9,225.5 361.7,390.5 361.7,392.5 75.9,227.5" class="mat-bevel" />
+
+    <!-- Desk Mat Perimeter Stitching -->
+    <polygon points="314,92.5 591.1,252.5 361.7,385 84.5,225" fill="none" class="mat-stitch" stroke-dasharray="4 3" stroke-width="0.9" />
+
+    <!-- DEDICATED GAMING MOUSEPAD -->
+    <polygon points="357.3,271 438.7,318 344.3,372.5 262.9,325.5" fill="rgba(0,0,0,0.5)" filter="blur(3px)" />
+
+    <polygon points="357.3,271.5 435.3,316.5 344.3,369 266.4,324" fill="#15171e" stroke="rgba(0, 229, 255, 0.35)" stroke-width="1" />
+
+    <polygon points="357.3,274.2 430.1,316.2 344.3,365.7 271.6,323.7" fill="none" stroke="rgba(0, 229, 255, 0.6)" stroke-dasharray="5 2.5" stroke-width="0.8" />
+  </g>
+
+  <!-- POWER STRIP -->
+  <g id="power-strip">
+    <polygon points="322.7,100 371.2,128 340,146 291.5,118" fill="rgba(0,0,0,0.65)" filter="blur(4px)" />
+
+    <polygon points="322.7,91 296.7,106 296.7,118 322.7,103" fill="#16171d" stroke="rgba(255,255,255,0.18)" stroke-width="0.8" />
+
+    <polygon points="296.7,106 340,131 340,143 296.7,118" fill="#1c1d24" stroke="rgba(255,255,255,0.18)" stroke-width="0.8" />
+
+    <polygon points="322.7,91 366,116 340,131 296.7,106" fill="#262832" stroke="rgba(255,255,255,0.22)" stroke-width="0.9" />
+
+    <polygon points="324.4,95 333.1,100 322.7,106 314,101" fill="#dc2626" stroke="#f87171" stroke-width="0.8" />
+
+    <circle cx="323.5" cy="100" r="2" fill="#fca5a5" filter="drop-shadow(0 0 4px #ef4444)" />
+
+    <polygon points="338.3,104.5 348.7,110.5 338.3,116.5 327.9,110.5" fill="#111216" stroke="rgba(255,255,255,0.12)" stroke-width="0.6" />
+    <line x1="338.3" y1="108" x2="334.8" y2="110" stroke="#000" stroke-width="1.2" />
+    <line x1="341.7" y1="110" x2="338.3" y2="112" stroke="#000" stroke-width="1.2" />
+    <circle cx="334.8" cy="112" r="0.9" fill="#000" />
+
+    <polygon points="352.1,112.5 359.1,116.5 348.7,122.5 341.7,118.5" fill="#111216" stroke="rgba(255,255,255,0.12)" stroke-width="0.6" />
+    <line x1="350.4" y1="115" x2="346.9" y2="117" stroke="#000" stroke-width="1.2" />
+    <line x1="353.9" y1="117" x2="350.4" y2="119" stroke="#000" stroke-width="1.2" />
+    <circle cx="346.9" cy="119" r="0.9" fill="#000" />
+
+    <path d="M325.3,98.5 Q327,83.5 357.3,85" fill="none" stroke="#121318" stroke-width="3.5" stroke-linecap="round" />
+  </g>
+
+  <!-- COOLING STAND -->
+  <g id="cooling-stand">
+    <polygon points="366,133 504.5,213 409.3,268 270.7,188" fill="rgba(0,0,0,0.65)" filter="blur(8px)" />
+
+    <polygon points="366,119 374.6,124 296.7,187 288,182" fill="#2a2c36" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" />
+
+    <polygon points="478.6,184 487.2,189 409.3,252 400.6,247" fill="#323541" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" />
+
+    <polygon points="366,119 487.2,189 409.3,252 288,182" fill="#22242e" stroke="rgba(255,255,255,0.25)" stroke-width="1" />
+
+    <polygon points="292.4,178.5 301,183.5 297.6,185.5 288.9,180.5" fill="#0f1013" stroke="rgba(255,255,255,0.3)" stroke-width="0.8" />
+
+    <polygon points="396.3,238.5 405,243.5 401.5,245.5 392.8,240.5" fill="#0f1013" stroke="rgba(255,255,255,0.3)" stroke-width="0.8" />
+  </g>
+
+  <!-- LENOVO LEGION 5 LAPTOP -->
+  <g id="lenovo-legion-laptop">
+    <polygon points="366,107 284.6,172 284.6,180 366,115" fill="#1a1c22" stroke="rgba(255,255,255,0.18)" stroke-width="1" />
+
+    <polygon points="284.6,172 409.3,244 409.3,252 284.6,180" fill="#22242d" stroke="rgba(255,255,255,0.18)" stroke-width="1" />
+
+    <polygon points="366,107 490.7,179 409.3,244 284.6,172" fill="#2c2e3a" stroke="rgba(255,255,255,0.22)" stroke-width="1" />
+
+    <polygon points="374.6,102 499.3,174 490.7,179 366,107" fill="#181a20" stroke="rgba(255,255,255,0.15)" stroke-width="0.8" />
+
+    <polygon points="379.8,108 410.1,125.5 410.1,128.5 379.8,111" fill="#00e5ff" opacity="0.85" filter="drop-shadow(0 0 4px #00e5ff)" />
+
+    <polygon points="462.1,155.5 492.4,173 492.4,176 462.1,158.5" fill="#00e5ff" opacity="0.85" filter="drop-shadow(0 0 4px #00e5ff)" />
+
+    <polygon points="364.2,115 478.6,181 428.3,222 314,156" fill="#191a21" stroke="rgba(255,255,255,0.1)" stroke-width="0.8" />
+
+    
+        <polygon points="364.2,117 475.1,181 468.2,186.6 357.3,122.6" fill="#242631" stroke="rgba(255,255,255,0.08)" stroke-width="0.6" />
+      
+        <polygon points="354.7,124.8 465.6,188.8 458.6,194.4 347.8,130.4" fill="#242631" stroke="rgba(255,255,255,0.08)" stroke-width="0.6" />
+      
+        <polygon points="345.2,132.6 456,196.6 449.1,202.2 338.3,138.2" fill="#242631" stroke="rgba(255,255,255,0.08)" stroke-width="0.6" />
+      
+        <polygon points="335.7,140.4 446.5,204.4 439.6,210 328.7,146" fill="#242631" stroke="rgba(255,255,255,0.08)" stroke-width="0.6" />
+      
+        <polygon points="326.1,148.2 437,212.2 430.1,217.8 319.2,153.8" fill="#242631" stroke="rgba(255,255,255,0.08)" stroke-width="0.6" />
+      
+
+    <circle cx="424" cy="145.5" r="2" fill="#ffffff" filter="drop-shadow(0 0 4px #fff)" />
+
+    <polygon points="354.7,184.5 389.4,204.5 372,217.5 337.4,197.5" fill="#21232d" stroke="rgba(255,255,255,0.18)" stroke-width="0.8" />
+
+    <!-- DISPLAY SCREEN -->
+    <polygon points="366,107 490.7,179 490.7,79 366,7" fill="#1c1e26" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" />
+
+    <polygon points="366.8,106.5 488.1,176.5 488.1,80.5 366.8,10.5" fill="#0b0c10" stroke="#222" stroke-width="0.8" />
+
+    <circle cx="427.5" cy="44.5" r="1.2" fill="#333" />
+    <circle cx="427.5" cy="44.5" r="0.6" fill="#10b981" />
+
+    <polygon points="367.7,106 485.5,174 485.5,82 367.7,14" fill="url(#screen-glow-grad)" stroke="#1a202c" stroke-width="0.5" />
+
+    <!-- CODE EDITOR PANE -->
+    <polygon points="368.4,105.6 424.7,138.1 424.7,48.1 368.4,15.6" fill="#0a0c12" />
+
+    <line x1="369.9" y1="20.8" x2="391.5" y2="33.3" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="370.7" y1="30.3" x2="400.2" y2="47.3" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="374.2" y1="40.3" x2="413.2" y2="62.8" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="374.2" y1="48.3" x2="407.1" y2="67.3" stroke="#34d399" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="374.2" y1="56.3" x2="417.5" y2="81.3" stroke="#fbbf24" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="370.7" y1="62.3" x2="401.9" y2="80.3" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="370.7" y1="70.3" x2="395.9" y2="84.8" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="374.2" y1="80.3" x2="408.8" y2="100.3" stroke="#f472b6" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="374.2" y1="88.3" x2="415.8" y2="112.3" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="370.7" y1="94.3" x2="387.2" y2="103.8" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" />
+
+    <!-- LIVE PREVIEW PANE -->
+    <polygon points="426.4,139.1 484.5,172.6 484.5,82.6 426.4,49.1" fill="#11141e" />
+
+    <line x1="430.5" y1="62.8" x2="473.8" y2="87.8" stroke="rgba(255,255,255,0.85)" stroke-width="2.2" stroke-linecap="round" />
+    <polygon points="430.5,74.8 456.5,89.8 456.5,99.8 430.5,84.8" fill="#3b82f6" rx="2" />
+    <polygon points="430.5,90.8 453.9,104.3 453.9,130.3 430.5,116.8" fill="#1a1d28" stroke="rgba(255,255,255,0.12)" stroke-width="0.8" />
+    <polygon points="458.2,106.8 481.6,120.3 481.6,146.3 458.2,132.8" fill="#1a1d28" stroke="rgba(255,255,255,0.12)" stroke-width="0.8" />
+  </g>
+
+  <!-- LENOVO K7 KEYBOARD -->
+  <g id="lenovo-k7-keyboard">
+    <polygon points="210.1,169 351.3,250.5 283.7,289.5 142.5,208" fill="rgba(0,0,0,0.6)" filter="blur(6px)" />
+
+    <polygon points="210.1,161 149.5,196 149.5,208 210.1,173" fill="#181920" stroke="rgba(255,255,255,0.22)" stroke-width="1" />
+
+    <polygon points="149.5,196 283.7,273.5 283.7,285.5 149.5,208" fill="#1e2028" stroke="rgba(255,255,255,0.22)" stroke-width="1" />
+
+    <polygon points="210.1,161 344.3,238.5 283.7,273.5 149.5,196" fill="url(#k7-chassis-grad)" stroke="rgba(255,255,255,0.24)" stroke-width="1" />
+
+    <polygon points="210.1,163.5 339.1,238 283.7,270 154.7,195.5" fill="#14151b" stroke="rgba(255,255,255,0.1)" stroke-width="0.8" />
+
+    <!-- Function Row & Keys -->
+    <polygon points="210.1,162 217.9,166.5 211,170.5 203.2,166" fill="#cbd5e1" stroke="rgba(0,0,0,0.3)" stroke-width="0.7" />
+
+    
+        <polygon points="220.5,168 239.5,179 232.6,183 213.6,172" fill="#292a33" stroke="rgba(255,255,255,0.15)" stroke-width="0.7" />
+      
+        <polygon points="241.3,180 260.3,191 253.4,195 234.3,184" fill="#292a33" stroke="rgba(255,255,255,0.15)" stroke-width="0.7" />
+      
+        <polygon points="262.1,192 281.1,203 274.2,207 255.1,196" fill="#292a33" stroke="rgba(255,255,255,0.15)" stroke-width="0.7" />
+      
+        <polygon points="282.8,204 301.9,215 295,219 275.9,208" fill="#292a33" stroke="rgba(255,255,255,0.15)" stroke-width="0.7" />
+      
+
+    <polygon points="309.7,219.5 334.8,234 327.9,238 302.8,223.5" fill="#cbd5e1" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+
+    <!-- Number Row -->
+    <polygon points="201.4,167 285.4,215.5 278.5,219.5 194.5,171" fill="#2d2e38" stroke="rgba(255,255,255,0.15)" stroke-width="0.7" />
+    <polygon points="287.2,216.5 296.7,222 289.8,226 280.2,220.5" fill="#cbd5e1" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+
+    <!-- Tab & QWERTY -->
+    <polygon points="192.8,172 202.3,177.5 195.4,181.5 185.8,176" fill="#cbd5e1" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+    <polygon points="204,178.5 288,227 281.1,231 197.1,182.5" fill="#2d2e38" stroke="rgba(255,255,255,0.15)" stroke-width="0.7" />
+
+    <!-- Caps & ASDF -->
+    <polygon points="184.1,177 195.4,183.5 188.4,187.5 177.2,181" fill="#cbd5e1" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+    <polygon points="197.1,184.5 269.9,226.5 262.9,230.5 190.2,188.5" fill="#2d2e38" stroke="rgba(255,255,255,0.15)" stroke-width="0.7" />
+    <polygon points="271.6,227.5 279.4,232 272.5,236 264.7,231.5" fill="#cbd5e1" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+
+    <!-- Shift & ZXCV -->
+    <polygon points="175.5,182 190.2,190.5 183.2,194.5 168.5,186" fill="#cbd5e1" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+    <polygon points="191.9,191.5 259.5,230.5 252.5,234.5 185,195.5" fill="#2d2e38" stroke="rgba(255,255,255,0.15)" stroke-width="0.7" />
+    <polygon points="261.2,231.5 270.7,237 263.8,241 254.3,235.5" fill="#cbd5e1" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+
+    <!-- Modifiers & Spacebar -->
+    <polygon points="166.8,187 190.2,200.5 182.4,205 159,191.5" fill="#cbd5e1" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+
+    <polygon points="192.8,201.5 238.7,228 230.9,232.5 185,206" fill="#e2e8f0" stroke="rgba(0,0,0,0.3)" stroke-width="0.9" />
+
+    <polygon points="241.3,230 256,238.5 248.2,243 233.5,234.5" fill="#cbd5e1" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+
+    <!-- Inverted T Arrows -->
+    <polygon points="268.1,235.5 275,239.5 268.1,243.5 261.2,239.5" fill="#cbd5e1" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+    <polygon points="257.7,239.5 271.6,247.5 263.8,252 249.9,244" fill="#cbd5e1" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+
+    <!-- Numpad Block -->
+    <polygon points="300.2,234 311.4,240.5 287.2,254.5 275.9,248" fill="#2d2e38" stroke="rgba(255,255,255,0.15)" stroke-width="0.7" />
+
+    <polygon points="308.8,229 326.1,239 319.2,243 301.9,233" fill="#cbd5e1" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+
+    <polygon points="313.2,241.5 317.5,244 283.7,263.5 279.4,261" fill="#cbd5e1" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+
+    <polygon points="274.2,249 285.4,255.5 277.6,260 266.4,253.5" fill="#cbd5e1" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+
+    
+      <line x1="199.7" y1="169.8" x2="320.9" y2="239.8" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+    
+      <line x1="191" y1="174.8" x2="312.3" y2="244.8" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+    
+      <line x1="182.4" y1="179.8" x2="303.6" y2="249.8" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+    
+      <line x1="173.7" y1="184.8" x2="295" y2="254.8" stroke="rgba(0,0,0,0.25)" stroke-width="0.7" />
+    
+  </g>
+
+  <!-- LENOVO LEGION M500 MOUSE -->
+  <g id="lenovo-legion-m500-mouse">
+    <polygon points="372,303 380.7,312 362.5,327.5 328.7,333 315.8,320.5 328.7,306 353.9,300.5" fill="rgba(0,0,0,0.7)" filter="blur(4px)" />
+
+    <path d="M370.3,299.5 Q387.6,293.5 396.3,279" fill="none" stroke="#101115" stroke-width="2.6" stroke-linecap="round" />
+
+    <polygon points="369.4,296 372.9,298 375.5,298.5 372,296.5" fill="#1a1c22" stroke="rgba(255,255,255,0.2)" stroke-width="0.6" />
+
+    <!-- RGB Underglow Skirt -->
+    <polygon points="328.7,305 315.8,318.5 327.9,329.5 359.9,326 359.1,323 328.7,326.5 318.3,316.5 329.6,304" fill="url(#legion-rgb-strip)" opacity="0.95" filter="drop-shadow(0 0 5px #00f0ff)" />
+
+    <!-- Flared Left Thumb Wing -->
+    <polygon points="329.6,305 354.7,295.5 350.4,300 328.7,309.5 316.6,317.5" fill="#181a20" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" />
+
+    <!-- Diamond Knurled Dots -->
+    
+      <circle cx="335.7" cy="301.5" r="0.9" fill="rgba(255,255,255,0.35)" />
+    
+      <circle cx="336.5" cy="303" r="0.9" fill="rgba(255,255,255,0.35)" />
+    
+      <circle cx="337.4" cy="304.5" r="0.9" fill="rgba(255,255,255,0.35)" />
+    
+      <circle cx="331.3" cy="305" r="0.9" fill="rgba(255,255,255,0.35)" />
+    
+      <circle cx="332.2" cy="306.5" r="0.9" fill="rgba(255,255,255,0.35)" />
+    
+      <circle cx="333.1" cy="308" r="0.9" fill="rgba(255,255,255,0.35)" />
+    
+      <circle cx="327" cy="308.5" r="0.9" fill="rgba(255,255,255,0.35)" />
+    
+      <circle cx="327.9" cy="310" r="0.9" fill="rgba(255,255,255,0.35)" />
+    
+      <circle cx="322.7" cy="312" r="0.9" fill="rgba(255,255,255,0.35)" />
+    
+
+    <!-- Side Buttons -->
+    <polygon points="343.5,298.5 346.1,300 338.3,303.5 335.7,302" fill="#0b0c10" stroke="rgba(255,255,255,0.3)" stroke-width="0.6" />
+    <polygon points="333.9,303 336.5,304.5 329.6,307.5 327,306" fill="#0b0c10" stroke="rgba(255,255,255,0.3)" stroke-width="0.6" />
+
+    <!-- Palm Shell -->
+    <polygon points="355.6,294 370.3,298.5 378.1,306 359.9,318.5 329.6,322 322.7,313 344.3,293.5 353,299.5 354.7,305.5" fill="url(#mouse-shell-grad)" stroke="rgba(255,255,255,0.24)" stroke-width="1" />
+
+    <polygon points="356.5,294.5 368.6,298.5 353.9,298 346.9,294" fill="#272933" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" />
+
+    <polygon points="370.3,299.5 377.2,305.5 361.7,303.5 355.6,299" fill="#23252f" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" />
+
+    <polygon points="368.6,298.5 370.3,299.5 349.5,300.5 347.8,299.5" fill="#0f1014" stroke="#000" stroke-width="0.8" />
+
+    <!-- Illuminated Scroll Wheel -->
+    <polygon points="365.1,295.5 366.8,296.5 359.9,297.5 358.2,296.5" fill="#00e5ff" stroke="#fff" stroke-width="0.8" filter="drop-shadow(0 0 5px #00e5ff)" />
+    <line x1="365.1" y1="295" x2="359.9" y2="296.5" stroke="#0b0c10" stroke-width="1.2" />
+
+    <!-- DPI Switches -->
+    <polygon points="355.6,296 357.3,297 354.7,298 353,297" fill="#0b0c10" stroke="rgba(255,255,255,0.3)" stroke-width="0.6" />
+    <polygon points="352.1,297.2 353.9,298.2 351.3,299.3 349.5,298.3" fill="#0b0c10" stroke="rgba(255,255,255,0.3)" stroke-width="0.6" />
+
+    <!-- Legion Y-Logo -->
+    <circle cx="339.1" cy="306" r="1.5" fill="#00e5ff" filter="drop-shadow(0 0 6px #00e5ff)" />
+    <line x1="339.1" y1="306" x2="339.1" y2="302.5" stroke="#00e5ff" stroke-width="1.4" stroke-linecap="round" />
+    <line x1="339.1" y1="306" x2="346.1" y2="306.5" stroke="#00e5ff" stroke-width="1.4" stroke-linecap="round" />
+    <line x1="339.1" y1="306" x2="333.9" y2="310" stroke="#00e5ff" stroke-width="1.4" stroke-linecap="round" />
+  </g>
+
+  <!-- 4G SMARTPHONE -->
+  <g id="companion-phone">
+    <polygon points="435.3,326 464.7,343 409.3,375 379.8,358" fill="rgba(0,0,0,0.55)" filter="blur(4px)" />
+
+    <polygon points="383.3,354 409.3,369 409.3,373 383.3,358" fill="#111216" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" />
+
+    <polygon points="435.3,324 461.2,339 409.3,369 383.3,354" fill="#191a22" stroke="rgba(255,255,255,0.22)" stroke-width="0.9" />
+
+    <polygon points="434.4,326.3 456.9,339.3 410.1,366.3 387.6,353.3" fill="#08090d" stroke="#222" stroke-width="0.5" />
+
+    <text x="430.9" y="330" font-size="3" font-family="-apple-system, BlinkMacSystemFont, monospace" font-weight="900" fill="#10b981">4G · 60 FPS</text>
+    <line x1="425.7" y1="333" x2="442.2" y2="342.5" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="418.8" y1="337" x2="437" y2="347.5" stroke="rgba(255,255,255,0.35)" stroke-width="1.2" stroke-linecap="round" />
+    <line x1="411.9" y1="341" x2="423.1" y2="347.5" stroke="rgba(255,255,255,0.35)" stroke-width="1.2" stroke-linecap="round" />
+    <line x1="405" y1="345" x2="422.3" y2="355" stroke="rgba(255,255,255,0.35)" stroke-width="1.2" stroke-linecap="round" />
+    <line x1="398" y1="349" x2="411" y2="356.5" stroke="rgba(255,255,255,0.35)" stroke-width="1.2" stroke-linecap="round" />
+  </g>
+</svg>

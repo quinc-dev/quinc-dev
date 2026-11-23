@@ -73,7 +73,7 @@
   <!-- NODE 4: PRODUCTION VOLUME -->
   <g transform="translate(755, 22)">
     <text x="0" y="0" class="strip-label">04 // CORPUS</text>
-    <text x="0" y="16" class="strip-val">21 SYSTEMS COMPILED</text>
+    <text x="0" y="16" class="strip-val">20 SYSTEMS COMPILED</text>
   </g>
 
   <!-- Bottom Hairline with Traveling Light Signal -->
